@@ -6,8 +6,6 @@ def sayac(dosya):
 
     return line_count
 
-
-
 def arama (deger,dosya):
     with open(dosya, "r", encoding="utf-8") as file:
         var = 0
@@ -19,6 +17,12 @@ def arama (deger,dosya):
 
 
 def bulma(deger,dosya):
+# Bu fonksiyon "dosya" değişkeni ile verilen dosyada, "deger"
+# değişkeni ile belirtilen değer aranmaktadır.
+# Tespit edilen eşleşmeler bir sözlük içerisine aktarılmaktadır.
+#
+# deger: Dosyada aranan değer.
+# dosya: Verilerin kayıtlı olduğu dosya adı.
     sayac = 1
     sozluk = {}
     with open(dosya, "r", encoding="utf-8") as file:
@@ -30,8 +34,6 @@ def bulma(deger,dosya):
                 sayac += 1
     return sozluk
 
-
-
 i = 0
 with open("bilgiler","w",encoding="utf-8") as file:
     while True :
@@ -40,15 +42,11 @@ with open("bilgiler","w",encoding="utf-8") as file:
             break
         file.write("{}\n".format(i))
 
-
-
-
 cevap = input("Aramak istediğiniz kelimeyi yazınız:")
 if(arama(cevap,"bilgiler")):
     print("Aradığın değer {} kere bulundu".format(arama(cevap,"bilgiler")))
 else:
     print("Aradığınız kelime bulunamadı")
-
 
 print(bulma("e","bilgiler"))
 
