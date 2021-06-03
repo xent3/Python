@@ -18,14 +18,18 @@ def arama (deger,dosya):
         return var
 
 
-def bulma(deger1,dosya1):
-    with open(dosya1, "r", encoding="utf-8") as file1:
-        r = 0
-        for a in file1:
-            if deger1 != a:
-                r += 1
+def bulma(deger,dosya):
+    sayac = 1
+    sozluk = {}
+    with open(dosya, "r", encoding="utf-8") as file:
+        for a in file:
+            if a[:-1] == deger:
+                sozluk [sayac] = deger
+                sayac += 1
             else:
-                print("r")
+                sayac += 1
+    return sozluk
+
 
 
 i = 0
